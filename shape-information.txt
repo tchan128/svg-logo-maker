@@ -1,0 +1,1 @@
+{"text":"SVG","textColor":"White","shape":["Circle"],"shapeColor":"Blue"}
