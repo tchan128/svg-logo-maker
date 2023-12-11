@@ -1,1 +1,1 @@
-{"text":"svg","textColor":"white","shape":["Circle"],"shapeColor":"black"}
+{"text":"TIF","textColor":"White","shape":["Circle"],"shapeColor":"Black"}
