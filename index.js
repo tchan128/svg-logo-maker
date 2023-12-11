@@ -12,13 +12,13 @@ inquirer.registerPrompt('maxLength-input', MaxLengthInputPrompt);
 
 function createShape(fileName, shape, text) {
     const svg = 
-    `<svg width="300" height="300">
+    `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
         ${shape}
         ${text}
     </svg>`
 
     fs.writeFile(fileName, svg, (error) =>
-    error ? console.error(error) : console.log(shape))
+    error ? console.error(error) : console.log("Generated logo.svg"))
 }
 
 // Prompting for user input
@@ -56,17 +56,17 @@ inquirer
             const circle = new shape.Circle(100, 100, shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
             const shapeSVG = circle.shapeCreate();
             const shapeText = circle.textCreate();
-            createShape("circle.svg", shapeSVG, shapeText);
+            createShape("logo.svg", shapeSVG, shapeText);
         } else if (shapeInfo.shape[0] === "Square") {
             const square = new shape.Square(0, 0, shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
             const shapeSVG = square.shapeCreate();
             const shapeText = square.textCreate();
-            createShape("square.svg", shapeSVG, shapeText);
+            createShape("logo.svg", shapeSVG, shapeText);
         } else if (shapeInfo.shape[0] === "Triangle") {
-            const triangle = new shape.Triangle(0, 0, shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
+            const triangle = new shape.Triangle(shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
             const shapeSVG = triangle.shapeCreate();
             const shapeText = triangle.textCreate();
-            createShape("triangle.svg", shapeSVG, shapeText);
+            createShape("logo.svg", shapeSVG, shapeText);
         }
     });
 
