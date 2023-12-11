@@ -3,6 +3,11 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const shape = require("./lib/shapes.js");
 
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
+inquirer.registerPrompt('maxLength-input', MaxLengthInputPrompt);
+
+
+
 // Helper function to create logo
 
 function createShape(fileName, shape, text) {
@@ -21,9 +26,10 @@ function createShape(fileName, shape, text) {
 inquirer
     .prompt ([
         {
-            type: "input",
+            type: "maxLength-input",
             message: "What letters would you like to display on the logo? Note you have up to 3 letters.",
             name: "text",
+            maxLength: 3,
         },
         {
             type: "input",
