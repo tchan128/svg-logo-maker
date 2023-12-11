@@ -1,1 +1,1 @@
-{"text":"SVG","textColor":"White","shape":["Circle"],"shapeColor":"Blue"}
+{"text":"svg","textColor":"white","shape":["Circle"],"shapeColor":"black"}
