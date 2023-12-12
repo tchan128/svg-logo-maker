@@ -52,6 +52,8 @@ When `node index.js` is ran, it will prompt the user for four things:
 
 Afterwards, it will prompt a success message and you will see a new file called `logo.svg` which you will be able to open in a browser with the desired customizations. 
 
+Here is a video of how to use the app: https://share.vidyard.com/watch/kx4frdd6YQSwy7M4qnkGtZ?
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Visuals
@@ -60,6 +62,12 @@ Afterwards, it will prompt a success message and you will see a new file called 
 
 
 ## Test
+
+This project had 9 tests that were created in the `shapes.test.js` file. There were 3 categories of tests: shape generation, text size generation, and text and text color generation. 
+
+- The first three tests ensures that the correct color and shape of the logo is generated
+- The next three tests ensures that the correct font size is being used depending on how many letters will be in the logo 
+- The last three tests ensures that the text and text color provided by the user will be displayed correctly 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
