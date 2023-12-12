@@ -1,7 +1,7 @@
 // Importing libraries that are needed
 const inquirer = require("inquirer");
 const fs = require("fs");
-const shape = require("./lib/shapes.js");
+const {Triangle, Circle, Square} = require("./lib/shapes.js");
 
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
 inquirer.registerPrompt('maxLength-input', MaxLengthInputPrompt);
@@ -53,20 +53,17 @@ inquirer
         const shapeInfo = responses;
     
         if (shapeInfo.shape[0] === "Circle") {
-            const circle = new shape.Circle(100, 100, shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
-            const shapeSVG = circle.shapeCreate();
-            const shapeText = circle.textCreate();
-            createShape("logo.svg", shapeSVG, shapeText);
+            const circle = new Circle(shapeInfo.text, shapeInfo.textColor);
+            circle.setColor(shapeInfo.shapeColor)
+            createShape("logo.svg", circle.render(), circle.textCreate());
         } else if (shapeInfo.shape[0] === "Square") {
-            const square = new shape.Square(0, 0, shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
-            const shapeSVG = square.shapeCreate();
-            const shapeText = square.textCreate();
-            createShape("logo.svg", shapeSVG, shapeText);
+            const square = new Square(shapeInfo.text, shapeInfo.textColor);
+            square.setColor(shapeInfo.shapeColor)
+            createShape("logo.svg", square.render(), square.textCreate());
         } else if (shapeInfo.shape[0] === "Triangle") {
-            const triangle = new shape.Triangle(shapeInfo.text, shapeInfo.textColor, shapeInfo.shapeColor);
-            const shapeSVG = triangle.shapeCreate();
-            const shapeText = triangle.textCreate();
-            createShape("logo.svg", shapeSVG, shapeText);
+            const triangle = new Triangle(shapeInfo.text, shapeInfo.textColor);
+            triangle.setColor(shapeInfo.shapeColor)
+            createShape("logo.svg", triangle.render(), triangle.textCreate());
         }
     });
 
